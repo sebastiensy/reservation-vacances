@@ -1,5 +1,7 @@
 package fr.uha.miage.reservac.controller;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,10 +16,15 @@ public class CreateController {
 	@Autowired
 	private UtilisateurRepository userRepository;
 	
-	@RequestMapping("/create")
+	/*@RequestMapping("/create")
 	public String requestCreatePage(Model model) {
 		
-		model.addAttribute("user", new Utilisateur());
+		model.addAttribute("utilisateur", new Utilisateur());
+		return "create";
+	}*/
+	
+	@RequestMapping(value="/create")
+	public String showForm(HttpSession session, Utilisateur user) {
 		return "create";
 	}
 
