@@ -1,23 +1,54 @@
-<html>
-    <body>
-    <h1>Add a fruit</h1>
-        <!-- ggg<form action="#" th:action="@{/}" th:object="${fruit}" method="post">
-            <table>
-                <tr>
-                    <td>Name:</td>
-                    <td><input type="text" th:field="*{name}" /></td>
-                    <td th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</td>
-                </tr>
-                    <td><button type="submit">Submit</button></td>
-            </table>
-        </form>
-        
-        <h1>My cart</h1>
-        <ul>
-        <li th:each=" fruit : ${session.cart}"> 
-        	<p th:text="${fruit.name}"></p>
-        </li>
-        
-        </ul>-->
-    </body>
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Formulaire d'inscription</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<legend>Inscription</legend>
+  
+	<form th:object="${utilisateur}" method="POST">
+<fieldset>
+		<tr>
+			<td>Nom:</td>
+			<td><input type="text" th:field="*{nomUser}" /></td>
+		</tr>
+		<br />
+
+		<tr>
+			<td>Prenom:</td>
+			<td><input type="text" th:field="*{prenomUser}" /></td>
+		</tr>
+		<br />
+		<tr>
+			<td>Email:</td>
+			<td><input type="text" th:field="*{emailUser}" /></td>
+		</tr>
+		<br />
+		<tr>
+			<td>Mot de passe:</td>
+			<td><input type="password" th:field="*{mdpUser}" /></td>
+		</tr>
+		<br />
+		<tr>
+			<td>Date de naissance:</td>
+			<td><input type="text" th:field="*{dateNaissanceUser}" /></td>
+		</tr>
+		<br />
+
+		<tr>
+			<td>Téléphone:</td>
+			<td><input type="text" th:field="*{telUser}" /></td>
+		</tr>
+		<br />
+
+
+
+		<td><button type="submit">Envoyer</button></td>
+
+</fieldset>
+
+	</form>
+
+</body>
 </html>
